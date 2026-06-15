@@ -81,7 +81,7 @@ export function Chat() {
   };
 
   return (
-    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column', bgcolor: theme.palette.background.default }}>
+    <Box sx={{ height: '100%', display: 'flex', flexDirection: 'column', bgcolor: theme.palette.background.default }}>
       <Box sx={{ bgcolor: '#ff4e00', color: 'white', p: 2, display: 'flex', alignItems: 'center', gap: 2 }}>
         <IconButton onClick={() => navigate('/')} sx={{ color: 'white' }}><ArrowBack /></IconButton>
         <SmartToy sx={{ fontSize: 32 }} />
