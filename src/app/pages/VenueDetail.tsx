@@ -68,21 +68,11 @@ export function VenueDetail() {
           <ArrowBack />
         </IconButton>
 
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 2, width: '100%' }}>
-          <Box sx={{ width: 80, height: 80, bgcolor: 'rgba(255,255,255,0.2)', borderRadius: 2, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 40 }}>
-            {venue.type === 'park' && '🌳'}
-            {venue.type === 'cultural-center' && '🎭'}
-            {venue.type === 'event-center' && '🎪'}
-            {venue.type === 'theater' && '🎬'}
-            {venue.type === 'gallery' && '🖼️'}
-            {venue.type === 'other' && '📍'}
-          </Box>
-          <Box sx={{ flex: 1 }}>
-            <Typography variant="h5" sx={{ mb: 0.5 }}>{venue.name}</Typography>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, opacity: 0.9 }}>
-              <LocationOn sx={{ fontSize: 16 }} />
-              <Typography variant="body2">{venue.address}</Typography>
-            </Box>
+        <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', width: '100%', pt: 2 }}>
+          <Typography variant="h5" sx={{ mb: 0.5 }}>{venue.name}</Typography>
+          <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, opacity: 0.9 }}>
+            <LocationOn sx={{ fontSize: 16 }} />
+            <Typography variant="body2">{venue.address}</Typography>
           </Box>
         </Box>
       </Box>
@@ -97,7 +87,11 @@ export function VenueDetail() {
         ) : (
           <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
             {venueEvents.map((event) => (
-              <Card key={event.id} sx={{ cursor: 'pointer', transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.01)' } }}>
+              <Card
+                key={event.id}
+                onClick={() => navigate(`/event/${event.id}`)}
+                sx={{ cursor: 'pointer', transition: 'transform 0.2s', '&:hover': { transform: 'scale(1.01)' } }}
+              >
                 <Box
                   sx={{
                     height: 140,
@@ -149,8 +143,8 @@ export function VenueDetail() {
                     <LocationOn sx={{ fontSize: 16, color: 'text.secondary' }} />
                     <Typography variant="body2" color="text.secondary" noWrap>{event.location}</Typography>
                   </Box>
-                  <Box sx={{ display: 'flex', gap: 1, alignItems: 'flex-start', mt: 1.5, mb: 1.5 }}>
-                    <HamburgerHalfCut sx={{ color: 'text.secondary', fontSize: 16, mt: 0.3, flexShrink: 0 }} />
+                  <Box sx={{ display: 'flex', gap: 1, alignItems: 'center', mt: 1.5, mb: 1.5 }}>
+                    <HamburgerHalfCut sx={{ color: 'text.secondary', fontSize: 18, flexShrink: 0 }} />
                     <Typography
                       variant="body2"
                       color="text.secondary"
