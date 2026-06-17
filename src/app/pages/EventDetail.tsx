@@ -22,14 +22,26 @@ export function EventDetail() {
 
   return (
     <Box sx={{ minHeight: '100vh', bgcolor: theme.palette.background.default }}>
-      <Box sx={{ height: 200, bgcolor: categoryColors[event.category], color: 'white', position: 'relative', display: 'flex', flexDirection: 'column' }}>
-        <Box sx={{ p: 2 }}>
-          <IconButton onClick={() => navigate(-1)} sx={{ color: 'white', mb: 2 }}><ArrowBack /></IconButton>
-        </Box>
-        <Box sx={{ flex: 1, display: 'flex', alignItems: 'center', px: 3 }}>
+      <Box
+        sx={{
+          position: 'relative',
+          height: 220,
+          bgcolor: categoryColors[event.category],
+          color: 'white',
+          display: 'flex',
+          alignItems: 'flex-end',
+          p: 2,
+          backgroundImage: `url(${event.image})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
+        <Box sx={{ position: 'absolute', inset: 0, bgcolor: 'rgba(0,0,0,0.35)' }} />
+        <IconButton onClick={() => navigate(-1)} sx={{ color: 'white', position: 'absolute', top: 16, left: 16, bgcolor: 'rgba(0,0,0,0.3)', '&:hover': { bgcolor: 'rgba(0,0,0,0.45)' } }}><ArrowBack /></IconButton>
+        <Box sx={{ position: 'relative', width: '100%', display: 'flex', alignItems: 'flex-end', pl: 3, pb: 2 }}>
           <Box>
             <Chip label={categoryLabels[event.category]} size="small" sx={{ bgcolor: 'rgba(255,255,255,0.3)', color: 'white', mb: 1 }} />
-            <Typography variant="h5" sx={{ mb: 1 }}>{event.title}</Typography>
+            <Typography variant="h5" sx={{ mb: 1, color: 'white' }}>{event.title}</Typography>
           </Box>
         </Box>
       </Box>

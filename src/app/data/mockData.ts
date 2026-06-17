@@ -23,16 +23,16 @@ export const venues: Venue[] = [
   },
   {
     id: '2',
-    name: 'Centro Cultural',
+    name: 'Sesc SJC',
     type: 'cultural-center',
     address: 'Rua das Artes, 500',
     description: 'Centro dedicado às artes e cultura da cidade',
     eventCount: 18,
-    image: cassianoRicardoImg,
+    image: sescImg,
   },
   {
     id: '3',
-    name: 'Centro de Eventos',
+    name: 'Shopping Vale Sul',
     type: 'event-center',
     address: 'Avenida Principal, 2000',
     description: 'Complexo moderno para grandes eventos e festivais',
@@ -41,7 +41,7 @@ export const venues: Venue[] = [
   },
   {
     id: '4',
-    name: 'Teatro Municipal',
+    name: 'Teatro Univap',
     type: 'theater',
     address: 'Praça da República, 100',
     description: 'Teatro histórico com programação variada',
@@ -50,12 +50,12 @@ export const venues: Venue[] = [
   },
   {
     id: '5',
-    name: 'Galeria de Arte Moderna',
+    name: 'Fundação Cassiano Ricardo',
     type: 'gallery',
     address: 'Rua dos Artistas, 300',
     description: 'Exposições de arte contemporânea e workshops',
     eventCount: 10,
-    image: sescImg,
+    image: cassianoRicardoImg,
   },
 ];
 

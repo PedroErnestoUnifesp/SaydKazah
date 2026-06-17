@@ -55,7 +55,6 @@ export function Home() {
       <Box sx={{ p: 2 }}>
         <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
           <Typography variant="h6">Eventos Populares</Typography>
-          <Visibility sx={{ color: 'text.secondary', fontSize: 20 }} />
         </Box>
 
         <Box sx={{ display: 'flex', gap: 2, overflowX: 'auto', pb: 2, mb: 3 }}>
