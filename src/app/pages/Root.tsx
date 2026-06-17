@@ -23,6 +23,7 @@ import {
   Person,
   Settings,
   Info,
+  Bookmark,
   Close,
 } from '@mui/icons-material';
 import { useThemeMode } from '../context/ThemeContext';
@@ -233,6 +234,20 @@ export function Root() {
           <Divider />
 
           <List sx={{ pt: 1 }}>
+            <ListItem disablePadding>
+              <ListItemButton
+                onClick={() => handleMenuNav('/saved')}
+                sx={{ py: 1.5, '&:hover': { bgcolor: 'rgba(255,78,0,0.08)' } }}
+              >
+                <ListItemIcon sx={{ minWidth: 44 }}>
+                  <Bookmark sx={{ color: '#ff4e00' }} />
+                </ListItemIcon>
+                <ListItemText primary="Favoritos" secondary="Ver eventos salvos" />
+              </ListItemButton>
+            </ListItem>
+
+            <Divider sx={{ mx: 2 }} />
+
             <ListItem disablePadding>
               <ListItemButton
                 onClick={() => handleMenuNav('/profile')}
